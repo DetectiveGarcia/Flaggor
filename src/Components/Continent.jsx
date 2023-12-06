@@ -29,8 +29,6 @@ const Continent = (props) => {
               </>
             );
           })}
-        {/* {countryInfo && <CountryInfo data={coutries && coutries} />} */}
-        {/* onClick={() => {setCountryInfo(!countryInfo)}} */}
       </div>
     </>
   );

@@ -1,22 +1,27 @@
-import logo from './logo.svg';
+import Continent from './Components/Continent';
 import './App.css';
+import { useState } from 'react';
 
 function App() {
+
+  let [showContinents, setShowContinents] = useState(false)
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <p>Select continent</p>
+          <select id='continentSelect'>
+            <option value={'africa'}>Afrika</option>
+            <option value={'asia'}>Asia</option>
+            <option value={'europe'}>Europa</option>
+          </select>
+          <br></br>
+          <button onClick={() => {
+            setShowContinents(!showContinents)
+       
+          }}>Show countries</button>
+          
+          {showContinents && <Continent data={document.querySelector('#continentSelect').value}/>}
       </header>
     </div>
   );
